@@ -1,0 +1,223 @@
+* {
+    margin: 0%;
+    padding: 0%;
+    width: 100%;
+    font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    background: #f7f9fc;
+    box-sizing: border-box;
+    color: #172033;
+    font-size: large;
+}
+
+.title {
+    height: 78px;
+    padding: 0 32px;
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    border-bottom: 1px solid #edf1f6;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.icon {
+    width: 15%;
+    padding: 5px 50px 10px 5px;
+}
+
+.nav {
+    width: 13%;
+    flex-shrink: 0;
+    background: #fff;
+    border-right: 1px solid #e8edf5;
+    display: flex;
+    flex-direction: column;
+}
+
+.items {
+    padding: 20px;
+}
+
+.active {
+    background-color: rgba(139, 139, 255, 0.356);
+    border-radius: 20px;
+    padding: 10px;
+    color: rgb(67, 67, 253);
+    cursor: pointer;
+}
+
+.nonactive {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.navtxt {
+    padding: 5px 10px 50px 5px;
+}
+
+.logo {
+    width: 34px;
+    height: 34px;
+    border-radius: 7px;
+    background: #2f75ed;
+    color: white;
+    display: grid;
+    place-items: center;
+    font-size: 22px;
+}
+
+.Activetask h1 {
+    padding: 20px;
+    font-size: larger;
+}
+
+.check {
+    width: 10px;
+}
+
+.completedtask h1 {
+    padding: 20px;
+    font-size: larger;
+}
+
+.discription h1 {
+    font-size: 40px;
+}
+
+.discription {
+    padding: 20px;
+}
+
+.discription p {
+    color: grey;
+}
+
+.Add {
+    padding: 20px;
+    display: flex;
+    width: 100%;
+}
+
+.Add input {
+    width: 100%;
+    border: solid 1px grey;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    padding: 15px
+}
+
+.Add button {
+    width: 10%;
+    border: solid blue 1px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    color: white;
+    background-color: blue;
+    padding: 15px;
+    cursor: pointer;
+}
+
+.Add button:hover {
+    transform: translateY(-3px);
+    background-color: rgb(3, 3, 185);
+}
+
+.home {
+    padding: 20px;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    gap: 70%;
+}
+
+.homebtns {
+    display: flex;
+    width: 20%;
+    gap: 20px;
+}
+
+.homeactive {
+    padding: 10px;
+    border-radius: 20px;
+    color: white;
+    background-color: blue;
+    border: none;
+    cursor: pointer;
+}
+
+.default {
+    padding: 10px;
+    border-radius: 20px;
+    color: white;
+    background-color: grey;
+    border: none;
+    cursor: pointer;
+}
+
+.Search input {
+    width: 100%;
+    padding: 10px;
+    border: solid grey 1px;
+    border-radius: 20px;
+}
+
+.homebtns button:hover {
+    transform: translateY(-3px);
+    background-color: rgb(3, 3, 185);
+}
+
+.tasks {
+    width: 100%;
+    padding: 1%;
+}
+
+.tasks h1 {
+    font-size: xx-large
+}
+
+.task {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid grey;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.task button {
+    border: none;
+    width: 5%;
+    padding: 10px;
+    background-color: #2f75ed;
+    border-radius: 10px;
+    margin: 10px;
+}
+
+.task input {
+    margin: 20px;
+}
+
+.Completedtask {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid grey;
+    width: 100%;
+    justify-content: space-between;
+    gap: 60%;
+}
+
+.Completedtask button {
+    border: none;
+    width: 60%;
+    padding: 10px;
+    background-color: #2f75ed;
+    border-radius: 10px;
+    margin: 10px;
+}
+
+.Completedtask input {
+    margin: 20px;
+}
+
+.datebtn{
+    margin-left: 150px;
+}

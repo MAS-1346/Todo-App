@@ -5,14 +5,13 @@ import Tasks from '../tasks/tasks.jsx'
 import Nav from '../nav/nav.jsx'
 
 const STORAGE_KEY = "todo-app-tasks";
-export default function Home({status, SetStatus}) {
+export default function Home({ status, SetStatus }) {
     const [todos, setTodos] = useState([]);
     const [input, setInput] = useState("");
     const [editingId, setEditingId] = useState(null);
     const [editText, setEditText] = useState("");
 
     useEffect(() => {
-
         const saved = localStorage.getItem(STORAGE_KEY);
         if (saved) {
             setTodos(JSON.parse(saved));
@@ -25,6 +24,14 @@ export default function Home({status, SetStatus}) {
         localStorage.setItem(STORAGE_KEY, JSON.stringify(updatedtodos))
         console.log("deleted")
     };
+
+    const [search, setSearch] = useState('')
+    {
+        // console.log(filtered)
+    }
+
+    const filtered = todos.filter((todo) => todo.text.toLowerCase().includes(search.toLowerCase())
+    )
 
     const addTodo = () => {
         const newTodo = {
@@ -91,15 +98,15 @@ export default function Home({status, SetStatus}) {
                     <button className={status === 'Completed' ? 'homeactive' : "default"} onClick={() => handleChange('Completed')}>Completed</button>
                 </div>
                 <div className='Search'>
-                    <input placeholder=' ⌕  Search Tasks' />
+                    <input placeholder=' ⌕  Search Tasks' onChange={(e) => setSearch(e.target.value.toLowerCase())} />
                 </div>
             </div>
 
-            {status === "Active" && <Tasks todos={todos.filter(todo => !todo.Completed)} deleteTodo={deleteTodo} handleToggle={handleToggle} editingId={editingId} editText={editText} setEditText={setEditText} startEdit={startEdit} saveEdit={saveEdit} cancelEdit={cancelEdit} />}
+            {status === "Active" && <Tasks filtered={filtered.filter(todo => !todo.Completed)} deleteTodo={deleteTodo} handleToggle={handleToggle} editingId={editingId} editText={editText} setEditText={setEditText} startEdit={startEdit} saveEdit={saveEdit} cancelEdit={cancelEdit} />}
 
-            {status === "Completed" && <Completed todos={todos.filter(todo => todo.Completed)} deleteTodo={deleteTodo} handleToggle={handleToggle} editingId={editingId} editText={editText} setEditText={setEditText} startEdit={startEdit} saveEdit={saveEdit} cancelEdit={cancelEdit} />}
+            {status === "Completed" && <Completed filtered={filtered.filter(todo => todo.Completed)} deleteTodo={deleteTodo} handleToggle={handleToggle} editingId={editingId} editText={editText} setEditText={setEditText} startEdit={startEdit} saveEdit={saveEdit} cancelEdit={cancelEdit} />}
 
-            {status === "All" && <> <Tasks todos={todos.filter(todo => !todo.Completed)} deleteTodo={deleteTodo} handleToggle={handleToggle} editingId={editingId} editText={editText} setEditText={setEditText} startEdit={startEdit} saveEdit={saveEdit} cancelEdit={cancelEdit} /> <Completed todos={todos.filter(todo => todo.Completed)} deleteTodo={deleteTodo} handleToggle={handleToggle} editingId={editingId} editText={editText} setEditText={setEditText} startEdit={startEdit} saveEdit={saveEdit} cancelEdit={cancelEdit} /></>}
+            {status === "All" && <> <Tasks filtered={filtered.filter(todo => !todo.Completed)} deleteTodo={deleteTodo} handleToggle={handleToggle} editingId={editingId} editText={editText} setEditText={setEditText} startEdit={startEdit} saveEdit={saveEdit} cancelEdit={cancelEdit} /> <Completed filtered={filtered.filter(todo => todo.Completed)} deleteTodo={deleteTodo} handleToggle={handleToggle} editingId={editingId} editText={editText} setEditText={setEditText} startEdit={startEdit} saveEdit={saveEdit} cancelEdit={cancelEdit} /></>}
 
 
         </div>

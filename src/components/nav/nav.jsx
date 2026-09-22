@@ -13,14 +13,19 @@ export default function Nav({ status, SetStatus }) {
                     <div>TodoList</div>
                 </div>
                 <div className='items' >
-                    <div className={status === 'All' ? 'active' : "nonactive"} onClick={() => SetStatus('All')} >
-                        ⌂ {"\u00a0"} {"\u00a0"} {"\u00a0"} {"\u00a0"} {"\u00a0"}All Tasks
+                    <div style={{display:'flex', gap:'10'}} className={status === 'All' ? 'active' : "nonactive"} onClick={() => SetStatus('All')} >
+                        <span>
+                            ⌂
+                        </span>
+                        <span>
+                            All Tasks
+                        </span>
                     </div>
                     <div className={status === 'Active' ? 'active' : "nonactive"} onClick={() => SetStatus('Active')}>
-                        ◷ {"\u00a0"} {"\u00a0"} {"\u00a0"} {"\u00a0"} {"\u00a0"} Active
+                        {"\u00a0"} {"\u00a0"} {"\u00a0"} ◷ {"\u00a0"} {"\u00a0"} {"\u00a0"} {"\u00a0"} {"\u00a0"} Active
                     </div>
                     <div className={status === 'Completed' ? 'active' : "nonactive"} onClick={() => SetStatus('Completed')}>
-                        ✓ {"\u00a0"} {"\u00a0"} {"\u00a0"} {"\u00a0"} {"\u00a0"} completed
+                        {"\u00a0"} {"\u00a0"} {"\u00a0"} ✓ {"\u00a0"} {"\u00a0"} {"\u00a0"} {"\u00a0"} {"\u00a0"} completed
                     </div>
                 </div>
             </div>

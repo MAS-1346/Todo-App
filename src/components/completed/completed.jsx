@@ -1,12 +1,12 @@
 import React from 'react'
 import '/src/App.css'
 // import '../home/home'
-export default function Completed({ todos = [], deleteTodo, handleToggle, }) {
+export default function Completed({ filtered = [], deleteTodo, handleToggle, }) {
     return (
         <div className='tasks' >
             <h1>Completed</h1>
             <div>
-                {todos.map((todo) => (
+                {filtered.map((todo) => (
                     <div className='Completedtask' key={todo.id}>
                         <div> <input className='check' type='checkbox' checked={todo.Completed} onChange={() => handleToggle(todo.id)} />
                             {todo.text}</div>
